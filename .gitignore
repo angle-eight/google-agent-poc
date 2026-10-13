@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local configuration / credentials / deployment output
+.env
+.env.*
+!.env.example
+.aws/
+.agents/
+.codex/
+credentials*.json
+service-account*.json
+.deploy/
+.adk/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/

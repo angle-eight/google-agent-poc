@@ -1,0 +1,17 @@
+.git
+.venv
+.env
+.env.*
+.aws
+.agents
+.codex
+.deploy
+**/.adk
+**/__pycache__
+.pytest_cache
+.ruff_cache
+tests
+docs
+scripts
+credentials*.json
+service-account*.json

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172c36">
+  <title>社内ヘルプデスク</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="社内ヘルプデスク ホーム"><span class="brand-mark">H</span>Helpdesk</a>
+      <p class="eyebrow">WORKPLACE ASSISTANT</p>
+      <h1>仕事の「困った」を、<br>次の一歩へ。</h1>
+      <p class="intro">社内のルールや手続きを、<br>根拠を確かめながら相談できます。</p>
+      <button id="reset" class="reset" type="button">＋ 新しい会話</button>
+      <div class="knowledge-heading"><h2>参照できるデモ規程</h2><span id="doc-count"></span></div>
+      <div id="documents" class="documents"></div>
+      <footer>Google Agent Platform PoC<br><span>すべて架空の規程です。</span></footer>
+    </aside>
+    <main>
+      <header class="topbar"><div><span class="status-dot"></span>社内ヘルプデスク</div><span id="mode" class="mode">接続を確認中</span></header>
+      <div id="notice" class="notice">このアプリの規程・金額基準・窓口はデモ用です。</div>
+      <div id="conversation" class="conversation" role="log" aria-live="polite" aria-label="会話">
+        <section id="welcome" class="welcome">
+          <div class="welcome-icon" aria-hidden="true">✳</div>
+          <p class="eyebrow">HOW CAN I HELP?</p>
+          <h2>今日は、何を解決しましょう？</h2>
+          <p>手続きの確認から、購入予算の計算まで。<br>気になることをそのまま入力してください。</p>
+          <div class="suggestions">
+            <button type="button" data-prompt="VPNに接続できません。確認する手順を教えて">接続のトラブル<span>VPNに接続できない →</span></button>
+            <button type="button" data-prompt="税込18万円のPCを2台購入したい。合計と承認者を教えて">PCの購入相談<span>予算と承認者を確認 →</span></button>
+            <button type="button" data-prompt="在宅勤務は週何日まで？申請方法も教えて">働き方のルール<span>在宅勤務の申請方法 →</span></button>
+            <button type="button" data-prompt="経費精算の締切と必要な領収書について教えて">経費の手続き<span>精算の締切を確認 →</span></button>
+          </div>
+        </section>
+      </div>
+      <div class="composer-area">
+        <p id="error" class="error" role="alert" hidden></p>
+        <form id="chat-form" class="composer">
+          <label for="message" class="sr-only">相談内容</label>
+          <textarea id="message" placeholder="相談したいことを入力…" rows="2" maxlength="4000" required></textarea>
+          <button id="send" type="submit" aria-label="送信">↑</button>
+        </form>
+        <p class="composer-note">Enterで送信 · Shift + Enterで改行　／　パスワードなどの秘密情報は入力しないでください。</p>
+      </div>
+    </main>
+  </div>
+  <dialog id="doc-dialog"><button id="close-dialog" type="button" aria-label="閉じる">×</button><p id="doc-id" class="eyebrow"></p><h2 id="doc-title"></h2><p id="doc-content"></p><p class="dialog-note">架空のデモ規程です。実際の社内規程ではありません。</p></dialog>
+</body>
+</html>
